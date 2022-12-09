@@ -58,6 +58,10 @@ class Driver extends Person
         return $this->cost;
     }
 
+    public function __toString(): string
+    {
+        return "Driver Name = " . $this->name . ", Phone Number = " . $this->phoneNo;
+    }
 
 
 }

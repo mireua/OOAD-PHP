@@ -33,7 +33,7 @@ class Complaint {
 
     public function __toString(): string
     {
-        return "OrderID = " . $this->orderId . ", Complaint = " . $this->complaint . ", Resolved = " . $this->resolved;
+        return "OrderID = " . $this->orderId . ", Complaint = " . $this->complaint . ", Resolved = " . ($this->resolved ? 'True' : 'False');
     }
 
 

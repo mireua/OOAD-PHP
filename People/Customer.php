@@ -2,6 +2,10 @@
 
 namespace People;
 
+require_once "Person.php";
+require_once "OrderAndComplaints\OrderStatus.php";
+require_once "OrderAndComplaints\Complaint.php";
+
 use OrderAndComplaints\Complaint;
 use OrderAndComplaints\Order;
 
@@ -49,6 +53,7 @@ class Customer extends Person
         $order->setCustomerName($this->name);
         $order->setPickUpAddress("TU Dublin Blanch");
         $order->setDropOffAddress($this->homeAddress);
+        $order->setOrderID(1);
 
         return $order;
     }
@@ -57,6 +62,9 @@ class Customer extends Person
     {
         $complaint = new Complaint();
         $complaint->setComplaint("Driver was rude!");
+        $complaint->setOrderID(1);
+
+        return $complaint;
     }
 
     public function __toString(): string

@@ -1,6 +1,7 @@
 <?php
 
 namespace OrderAndComplaints;
+
 class Order {
     public string $driverName;
     private string $customerName;
@@ -12,12 +13,9 @@ class Order {
     private string $dateOfOrder;
     private string $orderStatus = OrderStatus::Pending;
 
-    public function __construct($dateOfOrder)
-    {
-        $d = time();
-        $this->$dateOfOrder = date("Y-m-d",$d);
+    function __construct() {
+        $this->dateOfOrder = date("l jS \of F Y h:i:s A");
     }
-
     public function getDateOfOrder(): string
     {
         return $this->dateOfOrder;
@@ -28,7 +26,7 @@ class Order {
     {
         return $this->driverName;
     }
-    public function setDriverName(mixed $driverName): void
+    public function setDriverName(string $driverName): void
     {
         $this->driverName = $driverName;
     }
@@ -36,7 +34,7 @@ class Order {
     {
         return $this->customerName;
     }
-    public function setCustomerName(mixed $customerName): void
+    public function setCustomerName(string $customerName): void
     {
         $this->customerName = $customerName;
     }
@@ -44,7 +42,7 @@ class Order {
     {
         return $this->pickUpAddress;
     }
-    public function setPickUpAddress(mixed $pickUpAddress): void
+    public function setPickUpAddress(string $pickUpAddress): void
     {
         $this->pickUpAddress = $pickUpAddress;
     }
@@ -52,7 +50,7 @@ class Order {
     {
         return $this->dropOffAddress;
     }
-    public function setDropOffAddress(mixed $dropOffAddress): void
+    public function setDropOffAddress(string $dropOffAddress): void
     {
         $this->dropOffAddress = $dropOffAddress;
     }
@@ -60,9 +58,9 @@ class Order {
     {
         return $this->orderID;
     }
-    public function setOrderID(mixed $orderID): void
+    public function setOrderID(int $orderID): void
     {
-        $this->orderID = $orderID;
+        $this->orderID  = $orderID;
     }
     public function getOrderCost(): float
     {
@@ -92,7 +90,7 @@ class Order {
     public function __toString(): string
     {
         return "Order ID = " . $this->orderID . ", Date of Order = " . $this->dateOfOrder . ", Customer Name = " . $this->customerName . ", Driver Name = " . $this->driverName
-        . ", Pick Up Address = " . $this->pickUpAddress . ", Drop-off Address = " . $this->dropOffAddress . ", Order Cost = " . $this->orderCost . ", Payed = " . $this->wasPayed
+        . ", Pick Up Address = " . $this->pickUpAddress . ", Drop-off Address = " . $this->dropOffAddress . ", Order Cost = " . $this->orderCost . ", Payed = " . ($this->wasPayed ? 'True' : 'False')
         . ", Order Status = " . $this->orderStatus;
     }
 

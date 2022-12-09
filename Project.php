@@ -1,5 +1,15 @@
 <?php
 
+namespace Project;
+
+require_once "Car.php";
+require_once "People\Customer.php";
+require_once "People\Driver.php";
+require_once "People\Manager.php";
+
+require_once "OrderAndComplaints\Order.php";
+
+use Car;
 use People\Customer;
 use People\Driver;
 use People\Manager;
@@ -8,6 +18,7 @@ use OrderAndComplaints\Order;
 
 class Project
 {
+
     public function createDriver(Order $order):Driver
     {
         $driver = new Driver();
@@ -57,3 +68,5 @@ class Project
         return $customer1;
     }
 }
+
+

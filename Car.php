@@ -50,5 +50,11 @@ final class Car
         $this->manual = $manual;
     }
 
+    public function __toString(): string
+    {
+        return "Owner = " . $this->ownerName . ", Make = " . $this->make . ", Car Registration = " . $this->carReg .
+        ", Manual Transmission? = " . $this->manual;
+    }
+
 
 }

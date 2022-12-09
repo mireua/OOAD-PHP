@@ -1,0 +1,11 @@
+{
+    "name": "mireua/OOADPHP",
+    "description": "A hello world composer private package.",
+    "autoload": {
+        "psr-4": {
+            "mireua\\OOAD-PHP\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
